@@ -8,7 +8,7 @@ For the core of the palette swapper (paletteswapper_back.py) that does the actua
 For the GUI layer that allows you to interact nicely with the clickable tool, you will also need PySimpleGUI.
 
 ## How to use
-Intuitively. In progress.
+Launch with Python. Click buttons. Detailed info coming soon.
 
 ## Screenshots
-In progress.
+![A screenshot should be here](/screenshot.png "Huh, a screenshot")
