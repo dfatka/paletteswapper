@@ -27,7 +27,7 @@ The `Save current palette` button enables you to save the mapping from the origi
 
 
 ## Two-file system
-The two files have different competences as well as different style. The paletteswapper_back.py is the core, written (somewhat) functionally and has the responsibility of actually chanching the colors in the image. The paletteswapper.py is the procedurally-written GUI shell that makes call into its back when needed. I kinda like the "functional core, procedural shell" philosophy.
+The two files have different competences as well as different style. The paletteswapper_back.py is the core, written (somewhat) functionally and has the responsibility of actually changing the colors in the image. The paletteswapper.py is the procedurally-written GUI shell that makes call into its back when needed. I kinda like the "functional core, procedural shell" philosophy.
 
 That also means that the paletteswapper_back.py can be used as a standalone package if a situation dictates such thing. In that case, you probably need the `fullswap(pilimg, dictpalette)` function, accepting two arguments - `pilimg` is a PIL Image object you want to change the colors of, `dictpalette` is a dictionary mapping the old palette to new one. The aforementioned function then returns a PIL Image object with changed colors.
 
