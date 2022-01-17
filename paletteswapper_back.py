@@ -1,4 +1,5 @@
 try:
+    raise ModuleNotFoundError
     from numba import jit
     using_numba = True
 except ModuleNotFoundError:
@@ -10,6 +11,7 @@ except ModuleNotFoundError:
 
 import numpy as np
 from PIL import Image
+# from pprint import pprint
 
 def pil_analysis(pilimg):
     """Take image as a PIL Image object, return its palette in a dictionary of the form
@@ -18,7 +20,7 @@ def pil_analysis(pilimg):
 
 
 def img_dimensions(img):
-    """Return dimensions of an image in numpz array form. Most of the times, equivalent to np.shape(img)."""
+    """Return dimensions of an image in numpy array form. Most of the times, equivalent to np.shape(img)."""
     try:
         width, height, channels = np.shape(img)
     except ValueError:
@@ -29,12 +31,13 @@ def img_dimensions(img):
 
 def flat_img(img, dims=None):
     """Return the image flattened, i.e. a 2-dimensional array, where the second dimension maps only colors."""
-    if dims == None:
+    if dims is None:
         dims = img_dimensions(img)
     return np.reshape(img, (dims[0]*dims[1], dims[2]))
 
 @jit
 def make_palette(flatimg):
+    output = np.unique(flatimg, axis=0)
     """Return all the colors in a flattened image."""
     return np.unique(flatimg, axis=0)
 

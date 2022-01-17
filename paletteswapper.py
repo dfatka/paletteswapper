@@ -192,6 +192,8 @@ def run_safe():
     sg.theme('DarkGrey')
     img = sg.popup_get_file('Pick an image to open', title='Open image')
     pilimg = Image.open(img)
+    if pilimg.mode == "P":
+        pilimg = pilimg.convert("RGBA")
     pilimg.save('temp.png', compress_level=0)
     palette = psb.pil_analysis(pilimg)
     print(palette)
@@ -209,6 +211,7 @@ def run():
             os.remove('temp.png')
         except FileNotFoundError:
             pass
+        print(e)
         sg.Popup("Something went wrong!", e)
 
 if __name__ == '__main__':
