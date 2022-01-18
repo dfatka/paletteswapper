@@ -25,6 +25,8 @@ The `Save current palette` button enables you to save the mapping from the origi
 ## Screenshots
 ![A screenshot should be here](/screenshot.png "Huh, a screenshot")
 
+Notice the colored bars. For the user's convenience, they show the original colors, while the text boxes for the color channels showcase the color that will be used after redrawing.
+
 
 ## Two-file system
 The two files have different competences as well as different style. The paletteswapper_back.py is the core, written (somewhat) functionally and has the responsibility of actually changing the colors in the image. The paletteswapper.py is the procedurally-written GUI shell that makes call into its back when needed. I kinda like the "functional core, procedural shell" philosophy.
